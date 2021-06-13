@@ -1,5 +1,5 @@
 #include <stdio.h>
-char line [100]; // i still don´t understand at all this  guess it means the amount or characters, numbers it will capture 
+char line [100]; // i still don´t understand at all this. I guess it means the amount of characters, numbers it will capture 
 int w;
 int h;
 int pe;
