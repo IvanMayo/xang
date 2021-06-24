@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <string.h>
+/********************************************
+ * triangle -- Computes area of a triangle. *
+ *                                          *
+ * Parameters                               *
+ *   width -- Width of the triangle.        *
+ *   height -- Height of the triangle.      *
+ *                                          *
+ * Returns                                  *
+ *   area of the triangle.                  *
+ ********************************************/
+
+float triangle(float width, float height)
+{
+  float area;     /* Area of the triangle */
+
+    area = width * height / 2.0;
+    return (area);
+}
+
+// the next func is almost the same
+float triangle2(float width, float height)
+{
+  return(width * height / 2.0);
+}
+
+void triangle3(float width, float height)
+{
+  float area;
+  area = width * height / 2.0;
+  printf("area is %f\n",area);
+  // return(area);
+}
+
+
+int main(void){
+  int count;
+  float h = 2.0, w = 4.9;
+
+  char line[100];
+  int len;
+  printf("write the line\n");
+  fgets(line, sizeof(line),stdin);
+  len = strlen(line); // find the lenght
+
+  printf("lenght of line %s is %d\n ", line, len);
+  for(count=0; count<len; count++)
+  {
+    if((line[count]>47) && (line[count]<58)){
+      printf("%c = %d \n",line[count],line[count]);
+    }
+    else{
+      printf("the char %c is not a number\n",line[count]);
+    }
+  }
+
+
+  return(0);
+}
