@@ -58,3 +58,50 @@ int main(void){
 
   return(0);
 }
+
+include <stdio.h>
+#include <string.h>
+ 
+
+// the functions receives a string and retuns the number of words           
+int wordcount(char string[200],int length)
+{
+  int count = 0;
+  char end='\0';
+  int cspace=0;  // char to space change
+  int spacec=0;  // space to char change
+  while(string[count]!=end ){
+    printf("string[%d]= %c \n",count,string[count]);
+    if(string[count]!=' ' && string[count+1]==' ')cspace++;
+    if(string[count]==' ' && string[count+1]!=' ')spacec++;
+    count++;
+    
+  }
+  printf("space to char %d , char to space %d\n", spacec,cspace);
+  return(count);
+}
+
+
+int main(void)
+{
+    char s[200],line[200];
+    //int count = 0, i;
+    int wlength;
+
+    printf("Enter the string:\n");
+    fgets(line,sizeof(line),stdin);
+    //sscanf(line, "%s",&s);
+    wlength = strlen(line);
+    line[wlength-1]='\0'; // sustituye \n -> \0 
+
+    wordcount(line,wlength);
+    //scanf("%[^\n]s", s);
+    //for (i = 0;s[i] != '\0';i++)
+    //{
+    //    if (s[i] == ' ' && s[i+1] != ' ')
+    //        count++;    
+    //}
+    // printf("Number of words in given string are: %d\n", count + 1);
+}
+
+
